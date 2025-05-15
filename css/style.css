@@ -147,6 +147,7 @@ body {
 }
 
 .btn.small {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
     padding: 0.5rem 1rem;
     font-size: 0.9rem;
 }
