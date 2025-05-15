@@ -146,8 +146,10 @@ body {
     box-shadow: 0 5px 15px rgba(255, 107, 0, 0.2);
 }
 
-.btn.small {
+.btn.primary.small, .btn.small.primary {
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+    border: none;
     padding: 0.5rem 1rem;
     font-size: 0.9rem;
 }
