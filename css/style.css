@@ -154,6 +154,15 @@ body {
     font-size: 0.9rem;
 }
 
+.btn.secondary.small, .btn.small.secondary {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    border-radius: 50px;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    background: transparent;
+}
+
 /* Sections */
 section {
     padding: 5rem 0;
