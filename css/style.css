@@ -155,8 +155,8 @@ body {
 }
 
 .btn.secondary.small, .btn.small.secondary {
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
+    padding: 0.5rem 1rem !important;
+    font-size: 0.9rem !important;
     border-radius: 50px;
     border: 2px solid var(--primary-color);
     color: var(--primary-color);
