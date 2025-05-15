@@ -28,7 +28,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 const navbar = document.querySelector('.navbar');
 window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
-        navbar.style.background = 'var(--background)';
+        navbar.style.background = getComputedStyle(document.documentElement).getPropertyValue('--background').trim();
         navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.3)';
     } else {
         navbar.style.background = 'rgba(18, 18, 18, 0.95)';
