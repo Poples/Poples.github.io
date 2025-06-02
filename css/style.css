@@ -1,391 +1,489 @@
-/* Reset and Base Styles */
+/* ===================================================================
+   RESET & BASE STYLES
+   =================================================================== */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-:root {
-    --primary-color: #ff6b00;
-    --secondary-color: #ff8533;
-    --text-color: #ffffff;
-    --light-text: #b3b3b3;
-    --background: #121212;
-    --section-bg: #1a1a1a;
-    --card-bg: #242424;
-    --transition: all 0.3s ease;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
+html,
 body {
-    font-family: 'Poppins', sans-serif;
-    line-height: 1.6;
-    color: var(--text-color);
-    background-color: var(--background);
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  font-family: 'Poppins', sans-serif;
+  background-color: #121212;
+  color: #fff;
 }
 
-/* Container */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
+ul {
+  list-style: none;
 }
 
-/* Navigation */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ===================================================================
+   COLOR VARIABLES
+   =================================================================== */
+:root {
+  --primary-color: #ff6b00;
+  --secondary-color: #ff8533;
+  --light-text: #b3b3b3;
+  --background: #121212;
+  --section-bg: #1a1a1a;
+  --card-bg: #242424;
+  --transition: all 0.3s ease;
+}
+
+/* ===================================================================
+   NAVBAR
+   =================================================================== */
 .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: var(--background);
-    backdrop-filter: blur(10px);
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  background: rgba(18, 18, 18, 0.85);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  padding: 1rem 2rem;
 }
 
-.nav-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--primary-color);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
 }
 
 .nav-links {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
+  display: flex;
+  gap: 2rem;
 }
 
 .nav-links a {
-    text-decoration: none;
-    color: var(--text-color);
-    font-weight: 500;
-    transition: var(--transition);
+  font-weight: 500;
+  transition: var(--transition);
 }
 
 .nav-links a:hover {
-    color: var(--primary-color);
+  color: var(--primary-color);
 }
 
 .hamburger {
-    display: none;
-    flex-direction: column;
-    gap: 6px;
-    cursor: pointer;
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
 }
 
 .hamburger span {
-    width: 25px;
-    height: 2px;
-    background: var(--text-color);
-    transition: var(--transition);
+  width: 25px;
+  height: 2px;
+  background: #fff;
+  transition: var(--transition);
 }
 
-/* Hero Section */
-.hero {
-    height: 100vh;
+/* Show hamburger under 768px */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  .hamburger {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 0 2rem;
-    background: linear-gradient(135deg, var(--background) 0%, var(--section-bg) 100%);
+  }
 }
 
-.hero-content h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
+/* ===================================================================
+   SECTION STYLE (EVERY SECTION = 100vh x 100vw)
+   =================================================================== */
+.section {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--section-bg);
+  padding: 0 2rem;
+  position: relative;
+  overflow: hidden;
 }
 
-.hero-content h2 {
+/* Wrapper to constrain content width inside each section */
+.section-wrapper {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Section Headings */
+.section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .section h2 {
     font-size: 2rem;
-    color: var(--light-text);
-    margin-bottom: 1.5rem;
+  }
 }
 
-.highlight {
-    color: var(--primary-color);
+/* ===================================================================
+   HERO SECTION SPECIFIC
+   =================================================================== */
+.hero {
+  background: var(--background);
+  text-align: center;
+  /* Push content below the navbar (navbar ~64px tall) */
+  padding-top: 64px;
+  box-sizing: border-box;
 }
 
-/* Buttons */
+/* Simply display the silhouette at a reasonable size, no circle border */
+.hero-silhouette {
+  width: 20vw;
+  height: 40vh;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+/* Hero text container */
+.hero-text h1 {
+  font-size: 2.75rem;
+  margin-bottom: 0.75rem;
+  white-space: nowrap; /* Prevent wrapping during typewriter */
+  overflow: hidden;    /* Hide overflow for typing effect */
+  border-right: 2px solid var(--primary-color);
+}
+
+.hero-text h2 {
+  font-size: 1.25rem;
+  color: var(--light-text);
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.hero-subtitle {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: var(--light-text);
+}
+
+/* Call-to-action buttons */
+.cta-buttons {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .btn {
-    display: inline-block;
-    padding: 0.8rem 2rem;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: var(--transition);
-    margin: 0.5rem;
+  display: inline-block;
+  padding: 0.6rem 1.8rem;
+  border-radius: 50px;
+  font-weight: 500;
+  transition: var(--transition);
+  cursor: pointer;
 }
 
 .btn.primary {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-    color: white;
-    border: none;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: #fff;
+  border: none;
 }
 
 .btn.secondary {
-    background: transparent;
-    border: 2px solid var(--primary-color);
-    color: var(--primary-color);
+  background: transparent;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
 }
 
 .btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(255, 107, 0, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 107, 0, 0.2);
 }
 
-.btn.primary.small, .btn.small.primary {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
+/* Smaller variants for “small” buttons (used in projects) */
+.btn.small {
+  padding: 0.4rem 1rem;
+  font-size: 0.9rem;
 }
 
-.btn.secondary.small, .btn.small.secondary {
-    padding: 0.5rem 1rem !important;
-    font-size: 0.9rem !important;
-    border-radius: 50px;
-    border: 2px solid var(--primary-color);
-    color: var(--primary-color);
-    background: transparent;
-}
-
-/* Sections */
-section {
-    padding: 5rem 0;
-}
-
-.section-title {
+/* Responsive adjustments for hero */
+@media (max-width: 768px) {
+  .hero-silhouette {
+    width: 25vw;
+    max-width: 140px;
+    min-width: 100px;
+    margin-bottom: 1rem;
+  }
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+  .hero-text h2 {
+    font-size: 1rem;
+  }
+  .hero-subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+  }
+  .btn {
+    width: 100%;
     text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-    color: var(--text-color);
+  }
 }
 
-/* About Section */
+/* ===================================================================
+   ABOUT SECTION SPECIFIC
+   =================================================================== */
 .about {
-    background: var(--section-bg);
+  padding-top: 64px; /* Make room for fixed navbar */
+  box-sizing: border-box;
 }
 
-.about-content {
-    max-width: 800px;
-    margin: 0 auto;
+.about-text {
+  text-align: left;
+  line-height: 1.7;
+  color: #ddd;
+}
+
+.about-text p {
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .about-text {
     text-align: center;
+  }
 }
 
-/* Skills Section */
+/* ===================================================================
+   SKILLS SECTION SPECIFIC
+   =================================================================== */
 .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
 }
 
 .skill-card {
-    background: var(--card-bg);
-    padding: 2rem;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    transition: var(--transition);
-}
-
-.skill-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(255, 107, 0, 0.15);
+  background: var(--card-bg);
+  border-radius: 10px;
+  padding: 1.2rem;
+  text-align: center;
+  transition: var(--transition);
 }
 
 .skill-card i {
-    font-size: 3rem;
-    color: var(--primary-color);
-    margin-bottom: 1rem;
+  font-size: 2.2rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
 }
 
-/* Projects Section */
+.skill-card span {
+  display: block;
+  margin-top: 0.4rem;
+  font-weight: 500;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(255, 107, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+  .skills-grid {
+    gap: 1rem;
+  }
+}
+
+/* ===================================================================
+   PROJECTS SECTION SPECIFIC
+   =================================================================== */
 .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
 }
 
 .project-card {
-    background: var(--card-bg);
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    transition: var(--transition);
-}
-
-.project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(255, 107, 0, 0.15);
+  background: var(--card-bg);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
 }
 
 .project-image img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
 }
 
 .project-info {
-    padding: 1.5rem;
+  padding: 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.project-info h3 {
+  margin-bottom: 0.5rem;
+}
+
+.project-info p {
+  flex: 1;
+  color: var(--light-text);
+  margin-bottom: 1rem;
 }
 
 .project-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin: 1rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .project-tags span {
-    background: var(--section-bg);
-    padding: 0.3rem 0.8rem;
-    border-radius: 50px;
-    font-size: 0.8rem;
-    color: var(--light-text);
+  background: var(--section-bg);
+  padding: 0.3rem 0.8rem;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  color: var(--light-text);
 }
 
-/* Contact Section */
+.project-links {
+  margin-top: auto;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(255, 107, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+  .projects-grid {
+    gap: 1rem;
+  }
+}
+
+/* ===================================================================
+   CONTACT SECTION SPECIFIC
+   =================================================================== */
 .contact {
-    background: var(--section-bg);
+  padding-top: 64px; /* Make room for fixed navbar */
+  box-sizing: border-box;
 }
 
 .contact-content {
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .contact-info {
-    margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
 }
 
 .contact-item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
 }
 
 .contact-item i {
-    font-size: 1.5rem;
-    color: var(--primary-color);
+  font-size: 1.4rem;
+  color: var(--primary-color);
+}
+
+.contact-item span {
+  font-size: 1rem;
+  color: #ddd;
 }
 
 .social-links {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    margin-top: 2rem;
+  display: flex;
+  gap: 1.2rem;
 }
 
 .social-link {
-    color: var(--light-text);
-    font-size: 1.5rem;
-    transition: var(--transition);
+  color: var(--light-text);
+  font-size: 1.5rem;
+  transition: var(--transition);
 }
 
 .social-link:hover {
-    color: var(--primary-color);
-    transform: translateY(-3px);
+  color: var(--primary-color);
+  transform: translateY(-3px);
 }
 
-/* Footer */
+/* ===================================================================
+   FOOTER
+   =================================================================== */
 .footer {
-    background: var(--card-bg);
-    color: var(--light-text);
-    text-align: center;
-    padding: 2rem 0;
+  height: 64px;
+  background: var(--card-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  color: var(--light-text);
+  width: 100vw;
 }
 
-/* Responsive Design */
+/* ===================================================================
+   FADE-IN ANIMATIONS (JS will add .in-view)
+   =================================================================== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.section.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===================================================================
+   ADDITIONAL MEDIA QUERIES (RESPONSIVE)
+   =================================================================== */
 @media (max-width: 768px) {
-    .nav-links {
-        display: none;
-    }
-
-    .hamburger {
-        display: flex;
-    }
-
-    .hero-content h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero-content h2 {
-        font-size: 1.5rem;
-    }
-
-    .section-title {
-        font-size: 2rem;
-    }
+  /* Ensure all sections still fill the viewport */
+  .section {
+    height: 100vh;
+    padding: 0 1.5rem;
+  }
 }
-
-/* Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.hero-content, .about-content, .skill-card, .project-card {
-    animation: fadeIn 1s ease-out;
-}
-
-/* Profile Picture Styles */
-.profile-pic-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 2rem;
-    width: 100%;
-}
-
-.profile-pic {
-    width: 140px;
-    height: 140px;
-    max-width: 30vw;
-    max-height: 30vw;
-    border-radius: 50%;
-    object-fit: cover;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.3);
-    background: #222;
-    border: 4px solid var(--section-bg);
-    transition: box-shadow 0.3s;
-}
-
-.profile-pic:hover {
-    box-shadow: 0 8px 32px rgba(255,107,0,0.15);
-}
-
-@media (max-width: 768px) {
-    .profile-pic {
-        width: 90px;
-        height: 90px;
-        max-width: 40vw;
-        max-height: 40vw;
-    }
-    .profile-pic-container {
-        margin-bottom: 1.2rem;
-    }
-} 

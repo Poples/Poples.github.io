@@ -1,153 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joshua Swisher - Portfolio</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8"/>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  />
+  <title>Joshua Swisher – Portfolio</title>
+
+  <!-- Google Fonts & FontAwesome -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  />
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-content">
-            <div class="logo">Joshua Swisher</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+  <!-- ================================
+      Navigation
+  ================================= -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">Joshua Swisher</div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ================================
+      Hero Section (Home)
+  ================================= -->
+  <section id="home" class="section hero">
+    <!-- Just the silhouette PNG, no circle styling -->
+    <img
+      src="images/silhouette.png"
+      alt="Profile Silhouette"
+      class="hero-silhouette"
+    />
+
+    <!-- Heading text; typewriter effect will target this <h1> -->
+    <div class="hero-text">
+      <h1 class="typewriter-target"></h1>
+      <h2>
+        Cybersecurity Enthusiast | UC Berkeley Cybersecurity Program Graduate | Software Developer
+      </h2>
+      <p class="hero-subtitle">
+        Building innovative solutions with modern technologies
+      </p>
+      <div class="cta-buttons">
+        <a href="#projects" class="btn primary">View My Work</a>
+        <a href="#contact" class="btn secondary">Contact Me</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================
+      About Section
+  ================================= -->
+  <section id="about" class="section about">
+    <div class="section-wrapper">
+      <h2>About Me</h2>
+      <div class="about-text">
+        <p>
+          Driven, analytical, and passionate about cybersecurity, I have built
+          a strong foundation in vulnerability assessment, risk management,
+          threat analysis, and incident investigation through UC Berkeley’s
+          comprehensive Cybersecurity Program. This training has sharpened my
+          ability to identify, analyze, and mitigate cybersecurity threats in
+          real-world scenarios.
+        </p>
+        <p>
+          Beyond cybersecurity, I have a strong background in software
+          development, specializing in scripting, automation, and web
+          application security. I have built and deployed web applications,
+          worked with databases like MongoDB and MySQL to securely authenticate
+          and handle user data, developed security-focused tools to analyze
+          network traffic, simulate malware spread, and enhance defensive
+          measures. My ability to bridge cybersecurity and development allows
+          me to create custom security solutions, automate threat detection,
+          and improve overall system resilience.
+        </p>
+        <p>
+          With a natural problem-solving mindset and a detail-oriented
+          approach, I thrive on breaking down complex challenges into
+          actionable solutions with innovative thinking. I am committed to
+          staying ahead of evolving cyber threats and continuously learning to
+          enhance my skill set.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================
+      Skills Section
+  ================================= -->
+  <section id="skills" class="section skills">
+    <div class="section-wrapper">
+      <h2>Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <i class="fab fa-html5"></i>
+          <span>HTML5</span>
+        </div>
+        <div class="skill-card">
+          <i class="fab fa-css3-alt"></i>
+          <span>CSS3</span>
+        </div>
+        <div class="skill-card">
+          <i class="fab fa-js"></i>
+          <span>JavaScript</span>
+        </div>
+        <div class="skill-card">
+          <i class="fab fa-react"></i>
+          <span>React</span>
+        </div>
+        <!-- Add more .skill-card blocks if needed -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================
+      Projects Section
+  ================================= -->
+  <section id="projects" class="section projects">
+    <div class="section-wrapper">
+      <h2>Projects</h2>
+      <div class="projects-grid">
+        <!-- Example Project Card -->
+        <div class="project-card">
+          <div class="project-image">
+            <img
+              src="images/project-placeholder.jpg"
+              alt="Project Screenshot"
+            />
+          </div>
+          <div class="project-info">
+            <h3>Project Name</h3>
+            <p>Brief description of the project and its key features.</p>
+            <div class="project-tags">
+              <span>React</span>
+              <span>Node.js</span>
+              <span>MongoDB</span>
             </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="profile-pic-container">
-            <img src="images/silhouette.png" alt="Profile Silhouette" class="profile-pic" />
-        </div>
-        <div class="hero-content">
-            <h1>Hi, I'm <span class="highlight">Joshua Swisher</span></h1>
-            <h2>Cybersecurity Enthusiast | UC Berkeley Cybersecurity Program Graduate | Software Developer</h2>
-            <h3>Building innovative solutions with modern technologies</h3>
-            <div class="cta-buttons">
-                <a href="#projects" class="btn primary">View My Work</a>
-                <a href="#contact" class="btn secondary">Contact Me</a>
+            <div class="project-links">
+              <a href="#" class="btn primary small">View Demo</a>
+              <a href="#" class="btn secondary small">Source Code</a>
             </div>
+          </div>
         </div>
-    </section>
+        <!-- Duplicate .project-card blocks for each project -->
+      </div>
+    </div>
+  </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>Driven, analytical, and passionate about cybersecurity, I have built a strong foundation in vulnerability assessment, risk management, threat analysis, and incident investigation through UC Berkeley's comprehensive Cybersecurity Program. This training has sharpened my ability to identify, analyze, and mitigate cybersecurity threats in real-world scenarios.
-
-                        Beyond cybersecurity, I have a strong background in software development, specializing in scripting, automation, and web application security. I have built and deployed web applications, worked with databases like MongoDB and MySQL to securely authenticate and handle user data, developed security-focused tools to analyze network traffic, simulate malware spread, and enhance defensive measures. My ability to bridge cybersecurity and development allows me to create custom security solutions, automate threat detection, and improve overall system resilience.
-                        
-                        With a natural problem-solving mindset and a detail-oriented approach, I thrive on breaking down complex challenges into actionable solutions with innovative thinking. I am committed to staying ahead of evolving cyber threats and continuously learning to enhance my skill set.</p>
-                    
-                </div>
-            </div>
+  <!-- ================================
+      Contact Section
+  ================================= -->
+  <section id="contact" class="section contact">
+    <div class="section-wrapper">
+      <h2>Get In Touch</h2>
+      <div class="contact-content">
+        <div class="contact-info">
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <span>joshuaswisher101@gmail.com</span>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <span>+1 (405) 696-6016</span>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Stillwater, Oklahoma</span>
+          </div>
         </div>
-    </section> 
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <div class="container">
-            <h2 class="section-title">Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <i class="fab fa-html5"></i>
-                    <h3>HTML5</h3>
-                </div>
-                <div class="skill-card">
-                    <i class="fab fa-css3-alt"></i>
-                    <h3>CSS3</h3>
-                </div>
-                <div class="skill-card">
-                    <i class="fab fa-js"></i>
-                    <h3>JavaScript</h3>
-                </div>
-                <div class="skill-card">
-                    <i class="fab fa-react"></i>
-                    <h3>React</h3>
-                </div>
-                <!-- Add more skills as needed -->
-            </div>
+        <div class="social-links">
+          <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2 class="section-title">Projects</h2>
-            <div class="projects-grid">
-                <!-- Project Card 1 -->
-                <div class="project-card">
-                    <div class="project-info">
-                        <h3>Project Name</h3>
-                        <p>Brief description of the project and its key features.</p>
-                        <div class="project-tags">
-                            <span>React</span>
-                            <span>Node.js</span>
-                            <span>MongoDB</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="btn primary small">View Demo</a>
-                            <a href="#" class="btn small secondary">Source Code</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Add more project cards as needed -->
-            </div>
-        </div>
-    </section>
+  <!-- ================================
+      Footer
+  ================================= -->
+  <footer class="footer">
+    <p>&copy; 2025 Joshua Swisher. All rights reserved.</p>
+  </footer>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <p>joshuaswisher101@gmail.com</p>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <p>+1 (405) 696-6016</p>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <p>Stillwater, Oklahoma</p>
-                    </div>
-                </div>
-                <div class="social-links">
-                    <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Joshua Swisher. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script src="js/main.js"></script>
+  <!-- Main JavaScript -->
+  <script src="js/main.js"></script>
 </body>
-</html> 
+</html>
